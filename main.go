@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"slices"
+	"strings"
 )
 
 func getName() string {
@@ -19,6 +20,15 @@ func main() {
 	fmt.Println(greeting(name))
 }
 
+func shorten(name string) string {
+	firstSpace := strings.Index(name, " ")
+	if firstSpace == -1 {
+		return name
+	} else {
+		return name[:firstSpace]
+	}
+}
+
 func greeting(name string) string {
 	suffix := ""
 	makers := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
@@ -28,6 +38,8 @@ func greeting(name string) string {
 		name = name[:20]
 		suffix = "... Wow, that name’s too long for me!"
 	}
+
+	name = shorten(name)
 
 	return "Hello, " + name + suffix
 }
