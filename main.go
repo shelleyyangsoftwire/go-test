@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	//"math"
 	"os"
 	"slices"
 	"strings"
@@ -47,7 +46,6 @@ func isPalindrome(name string) bool {
 	return true
 }
 
-// isEmpty checks
 func isEmpty(name string) bool {
 	name = strings.TrimSpace(name)
 	if name == "" {

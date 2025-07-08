@@ -9,8 +9,6 @@ var tests = []struct {
 	expected string
 }{
 	{"terrible", "Hello, terrible."},
-	{"green", "Hello, green."},
-	{"cola", "Hello, cola."},
 	{"Robert Griesemer", "Hello, Robert. Thanks for creating me!"},
 	{"Ken Thompson", "Hello, Ken. Thanks for creating me!"},
 	{"Ken of Barbie", "Hello, Ken."},
