@@ -18,7 +18,12 @@ func getName() string {
 
 func main() {
 	name := getName()
-	fmt.Println(greeting(name))
+	name = strings.TrimSpace(name)
+	if !isEmpty(name) {
+		fmt.Println(greeting(name))
+	} else {
+		fmt.Println("Ok, no greeting for you")
+	}
 }
 
 func shorten(name string) string {
@@ -40,6 +45,15 @@ func isPalindrome(name string) bool {
 		}
 	}
 	return true
+}
+
+// isEmpty checks
+func isEmpty(name string) bool {
+	name = strings.TrimSpace(name)
+	if name == "" {
+		return true
+	}
+	return false
 }
 
 func greeting(name string) string {

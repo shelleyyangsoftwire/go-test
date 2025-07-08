@@ -21,6 +21,15 @@ var tests = []struct {
 	{"bobbobbobbobbobbobbobbobbob", "Hello, bobbobbobbobbobbobbo... Wow, that name’s too long for me! Cool, a palindromic name!"},
 }
 
+var emptyTests = []struct {
+	name     string
+	expected bool
+}{
+	{"terrible", false},
+	{"", true},
+	{"     ", true},
+}
+
 func TestGreeting(t *testing.T) {
 	for _, test := range tests {
 		result := greeting(test.name)
@@ -28,5 +37,14 @@ func TestGreeting(t *testing.T) {
 			t.Errorf("incorrect greeting for %s --  got: %s, expected: %s", test.name, result, test.expected)
 		}
 	}
+}
 
+func TestEmpty(t *testing.T) {
+	for _, test := range emptyTests {
+		result := isEmpty(test.name)
+		if result != test.expected {
+			t.Errorf("Input %s empty test failed", test.name)
+			t.Errorf("Expected: %t, got: %t", test.expected, result)
+		}
+	}
 }
