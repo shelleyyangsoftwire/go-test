@@ -8,13 +8,17 @@ var tests = []struct {
 	name     string
 	expected string
 }{
-	{"terrible", "Hello, terrible"},
-	{"green", "Hello, green"},
-	{"cola", "Hello, cola"},
+	{"terrible", "Hello, terrible."},
+	{"green", "Hello, green."},
+	{"cola", "Hello, cola."},
 	{"Robert Griesemer", "Hello, Robert. Thanks for creating me!"},
 	{"Ken Thompson", "Hello, Ken. Thanks for creating me!"},
-	{"Ken of Barbie", "Hello, Ken"},
+	{"Ken of Barbie", "Hello, Ken."},
 	{"Far More Than Twenty Characters", "Hello, Far... Wow, that name’s too long for me!"},
+	{"Bob", "Hello, Bob. Cool, a palindromic name!"},
+	{"Abba abba", "Hello, Abba. Cool, a palindromic name!"},
+	{"bob bob bob bob bob bob", "Hello, bob... Wow, that name’s too long for me! Cool, a palindromic name!"},
+	{"bobbobbobbobbobbobbobbobbob", "Hello, bobbobbobbobbobbobbo... Wow, that name’s too long for me! Cool, a palindromic name!"},
 }
 
 func TestGreeting(t *testing.T) {
