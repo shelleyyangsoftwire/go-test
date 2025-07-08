@@ -41,8 +41,7 @@ func TestEmpty(t *testing.T) {
 	for _, test := range emptyTests {
 		result := isEmpty(test.name)
 		if result != test.expected {
-			t.Errorf("Input %s empty test failed", test.name)
-			t.Errorf("Expected: %t, got: %t", test.expected, result)
+			t.Errorf("Input %s empty test failed -- Expected: %t, got: %t", test.name, test.expected, result)
 		}
 	}
 }

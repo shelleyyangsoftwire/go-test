@@ -17,7 +17,6 @@ func getName() string {
 
 func main() {
 	name := getName()
-	name = strings.TrimSpace(name)
 	if !isEmpty(name) {
 		fmt.Println(greeting(name))
 	} else {
@@ -58,7 +57,7 @@ func greeting(name string) string {
 	suffix := "."
 	makers := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
 	if slices.Contains(makers, name) {
-		suffix = ". Thanks for creating me!"
+		suffix += " Thanks for creating me!"
 	}
 
 	if len(name) > 20 {
