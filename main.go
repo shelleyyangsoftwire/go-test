@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"slices"
 )
 
 func getName() string {
@@ -19,5 +20,14 @@ func main() {
 }
 
 func greeting(name string) string {
-	return "Hello, " + name
+	suffix := ""
+	makers := []string{"Robert Griesemer", "Rob Pike", "Ken Thompson"}
+	if slices.Contains(makers, name) {
+		suffix = ". Thanks for creating me!"
+	} else if len(name) > 20 {
+		name = name[:20]
+		suffix = "... Wow, that name’s too long for me!"
+	}
+
+	return "Hello, " + name + suffix
 }
